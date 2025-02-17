@@ -128,14 +128,14 @@ header img:hover{
 }
 
 .small-image-2 img{
-    width: 30%;
+    width: 20%;
     object-fit: contain;
     animation: scroll-image;
     animation-timeline: scroll();
 }
 @keyframes scroll-image{
     from{
-        scale:4 2;
+        scale:3 2;
     }
     to{
         scale:1 1;
@@ -194,6 +194,77 @@ header img:hover{
     }
 }
 
+/* section - 4 */
+
+.section-4 {
+    margin: 30% 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+.black-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.5s ease-in-out;
+}
+.title-4{
+    padding: 10% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 400%;
+    color: white;
+}
+.title-4 img{
+    width: 60%;
+}
+
+/* section -5 */ 
+.title-5{
+    display: flex;
+    justify-content: center;
+    font-size: 500%;
+    padding: 20% 0;
+}
+.banner{
+    width: 50%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: relative;
+    width: 100%;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style:preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+}
+@keyframes autoRun{
+    from{
+        transform:  perspective(1000px) rotateX(-16deg) rotateY(0deg) ;
+    }
+    to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+.banner .slider .item{
+    position: relative;
+    inset: 0 0 0 0;
+    transform: 
+        rotate(calc((var(--position)- 1) * (360 / var(--quantity))))
+        translateZ(550px);
+}
 /* footer */
 
 footer{
